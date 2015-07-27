@@ -13,42 +13,5 @@ class Runner
   def initialize(options)
     @options = options    
   end
-
-  def run
-    start
-    perform
-    finish
-  end
-
-  def start
-  end
-
-  def perform
-  end
-
-  def finish
-  end
-
 end
 
-class EncryptionRunner < Runner
-
-  def start
-    puts 'Running!'
-  end
-
-  def perform
-    puts 'MUCH WORK. VERY HARD. WOW.'
-  end
-
-  def finish
-    puts 'ALL DONE!'
-  end
-
-end
-
-class DecryptionRunner < Runner
-end
-
-class CrackRunner < Runner
-end

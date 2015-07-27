@@ -8,6 +8,6 @@ class DateOffset
   end
 
   def offset
-    offset = date_square.to_s[-4..-1]
+  date_square.to_s[-4..-1]
   end
 end
