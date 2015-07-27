@@ -1,3 +1,8 @@
+require './lib/keygen'
+require './lib/offset'
+# require './lib/encryptor'
+# require './lib/decryptor'
+
 class Runner
 
   def self.for(options = {})
@@ -11,40 +16,17 @@ class Runner
   end
 
   def initialize(options)
-    @options = options    
+    @options = options
   end
-
-  def run
-    start
-    perform
-    finish
-  end
-
-  def start
-  end
-
-  def perform
-  end
-
-  def finish
-  end
-
 end
 
 class EncryptionRunner < Runner
 
-  def start
-    puts 'Running!'
+  def key
+    @key = Keygen.new.generate
   end
 
-  def perform
-    puts 'MUCH WORK. VERY HARD. WOW.'
-  end
-
-  def finish
-    puts 'ALL DONE!'
-  end
-
+  puts "Created 'encrypted.txt' with the key #{EncryptionRunner.new.key} and the date #{Time.new.strftime("%d%m%y")}"
 end
 
 class DecryptionRunner < Runner
