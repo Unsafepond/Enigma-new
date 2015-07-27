@@ -48,6 +48,24 @@ class TestEncryptor < Minitest::Test
 	def test_char_map_rotates_correctly
 		en = Encryptor.new
 
-		assert_equal "c", en.rotate_char_map(1)[1]
+		assert_equal "c", en.rotate_char_map(2)[0]
+	end
+
+	def test_hashes_correctly
+		en = Encryptor.new
+
+		assert_equal true, en.hash_char_map(en.a_rotated).class == Hash
+	end
+
+	def test_it_encrypts
+		en = Encryptor.new
+
+		refute_equal "..end..", en.encrypt
+	end
+
+	def test_it_encrypts_and_returns_string
+		en = Encryptor.new
+
+		assert_equal true, en.encrypt.class == String
 	end
 end
