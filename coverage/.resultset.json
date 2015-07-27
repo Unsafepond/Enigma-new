@@ -1,0 +1,15 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/UnsafePond/Documents/Turing/1ModRepeat/Projects/Enigma/lib/keygen.rb": [
+        1,
+        1,
+        36,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1438016247
+  }
+}

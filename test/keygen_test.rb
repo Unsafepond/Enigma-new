@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../lib/keygen'
+require './lib/keygen'
 
 class TestKeygen < Minitest::Test
 	def test_its_a_thing
