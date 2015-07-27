@@ -16,6 +16,7 @@ class Runner
   end
 
   def initialize(options)
+<<<<<<< HEAD
     @options = options
   end
 end
@@ -34,3 +35,9 @@ end
 
 class CrackRunner < Runner
 end
+=======
+    @options = options
+  end
+end
+
+>>>>>>> 7deba20f09d4ac17011745f5a374770c6b748ff3
