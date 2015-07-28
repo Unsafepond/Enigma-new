@@ -63,6 +63,12 @@ class TestDecryptor < Minitest::Test
 		assert_equal "..end..", en.decrypt
 	end
 
+	def test_it_decrypts_another_message
+		en = Decryptor.new("n8ekr8.", "13370")
+
+		assert_equal "..end..", en.decrypt
+	end
+
 	def test_it_encrypts_and_returns_string
 		en = Decryptor.new
 

@@ -59,6 +59,3 @@ class Encryptor
 			message.scan(/.{1,4}/)
 	end
 end
-
-en = Encryptor.new("..end..", "11223")
-en.encrypt
