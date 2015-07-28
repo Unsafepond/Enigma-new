@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/runner'
+require './lib/runner'
 
 infile, outfile, key, date = ARGV
 

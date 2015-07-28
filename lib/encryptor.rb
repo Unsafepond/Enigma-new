@@ -29,7 +29,7 @@ class Encryptor
 	end
 
 	def numbers
-		("1".."9").to_a
+		("0".."9").to_a
 	end
 
 	def char_map

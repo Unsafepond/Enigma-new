@@ -36,13 +36,13 @@ class TestEncryptor < Minitest::Test
 	def test_numbers
 		en = Encryptor.new
 
-		assert_equal ["1", "2", "3"], en.numbers[0..2]
+		assert_equal ["0", "1", "2"], en.numbers[0..2]
 	end
 
 	def test_char_map
 		en = Encryptor.new
 
-		assert_equal ["7", "8", "9", " "], en.char_map[32..35]
+		assert_equal ["6", "7", "8", "9"], en.char_map[32..35]
 	end
 
 	def test_char_map_rotates_correctly
