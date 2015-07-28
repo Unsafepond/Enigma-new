@@ -1,6 +1,6 @@
 require './lib/offset'
 require './lib/keygen'
-class Encryptor
+class Decryptor
 	attr_accessor :message, :offset, :key, :a_key,
 	:b_key, :c_key, :d_key, :a_rotated, :b_rotated, :c_rotated,
 	:d_rotated, :a_hash, :b_hash, :c_hash, :d_hash
@@ -37,28 +37,25 @@ class Encryptor
 	end
 
 	def rotate_char_map(number)
-		char_map.rotate(number)
+		char_map.rotate(-number)
 	end
 
 	def hash_char_map(value)
 		Hash[char_map.zip(value)]
 	end
 
-	def encrypt
-		encrypted = []
+	def decrypt
+		decrypted = []
 		 scanned_message.each do |segment|
-			encrypted << a_hash[segment[0]]
-			encrypted << b_hash[segment[1]]
-			encrypted << c_hash[segment[2]]
-			encrypted << d_hash[segment[3]]	
+			decrypted << a_hash[segment[0]]
+			decrypted << b_hash[segment[1]]
+			decrypted << c_hash[segment[2]]
+			decrypted << d_hash[segment[3]]	
 		end
-	puts encrypted.join
+	decrypted.join
 	end
 
 	def scanned_message
 			message.scan(/.{1,4}/)
 	end
 end
-
-en = Encryptor.new("..end..", "11223")
-en.encrypt
