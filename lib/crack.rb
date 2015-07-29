@@ -1,14 +1,17 @@
 require './lib/encryptor'
 
 class Crack
-	def initialize(encrypted)
+	attr_accessor :encrypted
+	def initialize(encrypted = "ln2cpnx")
 		@encrypted = encrypted
 	end
 
-	def crack
-
+	def scan_message
+		encrypted.scan(/.{1,4}/)
 	end
 
-	[1..39].each do |number|
-		
+	def last_8_characters
+		scan_message.last(2)
+	end
+
 end
