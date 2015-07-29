@@ -4,7 +4,7 @@ require './lib/runner'
 
 class RunnerTest < Minitest::Test
   def test_it_exists
-    new_run = Runner.new
+    new_run = Runner
     assert new_run
   end
 

@@ -4,13 +4,21 @@ require './lib/encryptor'
 # require './lib/decryptor'
 
 class Runner
-  attr_accessor :key, :date
 
-  def initialize
-    @key = Keygen.new.generate
-    @date = DateOffset.new.date
+  def self.for(options = {})
+    if options[:key] && options[:date]
+      DecryptionRunner.new(options)
+    elsif options[:date]
+      CrackRunner.new(options)
+    else
+      encrypted = Encryptor.new(options[:infile], key = Keygen.new.generate,
+        offset = DateOffset.new.offset)
+      output_text = FileIO.new.write_file(encrypted.encrypt)
+      puts "Created encrypted.txt with the key #{key} and the date #{Time.new.strftime("%d%m%y")}"
+    end
+  end
+
+  def initialize(options)
+    @options = options
   end
 end
-
-new_run = Runner.new
-puts "Created #{ARGV[1]} with the key #{new_run.key} and date #{new_run.date}"
