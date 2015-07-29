@@ -1,3 +1,8 @@
+require './lib/keygen'
+require './lib/offset'
+require './lib/encryptor'
+# require './lib/decryptor'
+
 class Runner
 
   def self.for(options = {})
@@ -6,12 +11,14 @@ class Runner
     elsif options[:date]
       CrackRunner.new(options)
     else
-      EncryptionRunner.new(options)
+      encrypted = Encryptor.new(options[:infile], key = Keygen.new.generate,
+        offset = DateOffset.new.offset)
+      output_text = FileIO.new.write_file(encrypted.encrypt)
+      puts "Created encrypted.txt with the key #{key} and the date #{Time.new.strftime("%d%m%y")}"
     end
   end
 
   def initialize(options)
-    @options = options    
+    @options = options
   end
 end
-

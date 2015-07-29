@@ -1,5 +1,9 @@
 class DateOffset
   attr_accessor :date
+<<<<<<< HEAD
+=======
+  
+>>>>>>> runner
   def initialize
     @date = Time.new.strftime("%d%m%y").to_i
   end
