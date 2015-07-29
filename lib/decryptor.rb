@@ -45,6 +45,7 @@ class Decryptor
 	def d_hash
 		hash_char_map(d_rotated)
 	end
+
 	def alphabet
 		("a".."z").to_a
 	end
@@ -71,7 +72,7 @@ class Decryptor
 			decrypted << a_hash[segment[0]]
 			decrypted << b_hash[segment[1]]
 			decrypted << c_hash[segment[2]]
-			decrypted << d_hash[segment[3]]
+			decrypted << d_hash[segment[3]]	
 		end
 	decrypted.join
 	end

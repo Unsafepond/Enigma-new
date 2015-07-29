@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../lib/offset'
+require './lib/offset'
 
 class DateOffsetTest < Minitest::Test
   def test_it_exists
@@ -9,9 +9,8 @@ class DateOffsetTest < Minitest::Test
   end
 
   def test_it_can_get_current_date_in_UTC
-    skip
     current_date = DateOffset.new
-    assert_equal current_date, Time.new.strftime("%d%m%y").to_i
+    assert_equal current_date.date, Time.new.strftime("%d%m%y").to_i
   end
 
   def test_it_can_square_the_date

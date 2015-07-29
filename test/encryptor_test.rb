@@ -63,7 +63,7 @@ class TestEncryptor < Minitest::Test
 		refute_equal "..end..", en.encrypt
 	end
 
-	def test_it_decrypts_and_returns_string
+	def test_it_encrypts_and_returns_string
 		en = Encryptor.new
 
 		assert_equal true, en.encrypt.class == String

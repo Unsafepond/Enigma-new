@@ -59,3 +59,4 @@ class Encryptor
 			message.scan(/.{1,4}/)
 	end
 end
+
