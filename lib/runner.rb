@@ -11,7 +11,7 @@ class Runner
   end
 
   def initialize(options)
-    @options = options    
+    @options = options
   end
 
   def run
