@@ -1,6 +1,6 @@
 class DateOffset
   attr_accessor :date
-  
+
   def initialize
     @date = Time.new.strftime("%d%m%y").to_i
   end
