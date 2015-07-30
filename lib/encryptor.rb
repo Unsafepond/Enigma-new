@@ -52,11 +52,10 @@ class Encryptor
 			encrypted << c_hash[segment[2]]
 			encrypted << d_hash[segment[3]]
 		end
-	puts encrypted.join
+	encrypted.join
 	end
 
 	def scanned_message
 			message.scan(/.{1,4}/)
 	end
 end
-

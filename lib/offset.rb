@@ -1,8 +1,8 @@
 class DateOffset
   attr_accessor :date
 
-  def initialize
-    @date = Time.new.strftime("%d%m%y").to_i
+  def initialize(date = Time.new.strftime("%d%m%y").to_i)
+    @date = date
   end
 
   def date_square
@@ -10,6 +10,6 @@ class DateOffset
   end
 
   def offset
-  date_square.to_s[-4..-1]
+    date_square.to_s[-4..-1]
   end
 end
