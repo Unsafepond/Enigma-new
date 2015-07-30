@@ -22,7 +22,7 @@ class FileIO
   end
 
   def input_date
-    puts "Input Date (DDMMYY) (Blank for current date): "
+    puts "Input Date (DDMMYY) (Leave blank for encryption): "
     date = $stdin.gets.chomp
 
     if date.length == 6
